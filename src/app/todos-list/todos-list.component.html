@@ -1,0 +1,26 @@
+<div class="todo-list">
+    <h1> Todos list </h1>
+
+    <mat-form-field class="todo-input">
+        <mat-label>Input TODO</mat-label>
+        <input matInput #inputTODO (keyup.enter)="onAddTodo(inputTODO.value)">
+        <mat-icon matSuffix>edit</mat-icon>
+    </mat-form-field>
+
+    <mat-button-toggle-group (change)="onFilterChange($event)" #filter>
+        <mat-button-toggle value="all">All</mat-button-toggle>
+        <mat-button-toggle value="pending">Pending</mat-button-toggle>
+        <mat-button-toggle value="completed">Completed</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-selection-list #cTodos>
+        @for (todo of store.filteredTodos(); track todo.id; let index = $index) {
+        <mat-list-option [selected]="todo.completed" (selectedChange)="onTodoToggle(todo.id, $event)">
+            <div class="todo-item">
+                <mat-icon class="delete-btm" (click)="onDelete(todo.id, $event)"> delete </mat-icon>
+                <span [ngStyle]="{'text-decoration': todo.completed ? 'line-through' : 'none'}"> {{todo.title}} </span>
+            </div>
+        </mat-list-option>
+        }
+    </mat-selection-list>
+</div>

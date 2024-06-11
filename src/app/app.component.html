@@ -1,4 +1,9 @@
 <div class="app">
   <h1> Angular University clone </h1>
-  
+
+  @if (!store.loading()) {
+  <app-todos-list />
+  } @else {
+  <mat-spinner />
+  }
 </div>

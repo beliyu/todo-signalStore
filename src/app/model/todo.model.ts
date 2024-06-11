@@ -6,7 +6,7 @@ export type Todo = {
 
 export const TODOS: Todo[] = [
     {id:'1', title:'Poseti KV', completed: false },
-    {id:'2', title:'Poseti KG', completed: false },
+    {id:'2', title:'Poseti KG', completed: true },
     {id:'3', title:'Poseti biblioteku', completed: false },
     {id:'4', title:'Poseti pijac', completed: false },
     {id:'5', title:'Poseti kumove', completed: false },

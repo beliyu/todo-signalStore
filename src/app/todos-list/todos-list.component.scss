@@ -1,0 +1,13 @@
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .todo-input {
+    width: 200px;
+ }
+ .delete-btm {
+    margin-right: 10px;
+    margin-bottom: -5px;
+    cursor: pointer;
+ }
