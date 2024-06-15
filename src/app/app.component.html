@@ -1,8 +1,22 @@
 <div class="app">
-  <h1> Angular University clone </h1>
+  <mat-toolbar  color="primary">
+    <mat-toolbar-row>
+      <mat-nav-list>
+        <mat-list-item >
+          <a [routerLink]="['/todos']">Todos</a>
+        </mat-list-item>
+      </mat-nav-list>
+
+      <span class="spacer"></span>
+      <mat-icon class="example-icon" aria-hidden="false"
+        aria-label="User verified icon">verified_user</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <h1> Angular coding exercises </h1>
 
   @if (!store.loading()) {
-  <app-todos-list />
+  <router-outlet></router-outlet>
   } @else {
   <mat-spinner />
   }

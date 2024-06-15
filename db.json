@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "todos": [
+    {
+      "id": "1",
+      "title": "Poseti KV",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Poseti KG",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "title": "Poseti biblioteku",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "title": "Poseti pijac",
+      "completed": false
+    },
+    {
+      "completed": false,
+      "id": "5",
+      "title": "poseti kumove"
+    },
+    {
+      "id": "6",
+      "title": "Popravi bravu",
+      "completed": false
+    },
+    {
+      "id": "8c8b",
+      "title": "258",
+      "completed": true
+    }
+  ]
+}

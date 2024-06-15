@@ -1,28 +1,37 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { TODOS, Todo } from "../model/todo.model";
+import { HttpClient } from "@angular/common/http";
+import { Observable, catchError } from "rxjs";
+import { ErrorHandlingService } from "./error-handling.service";
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 
 export class TodoService {
-    async getTodos() {
-        await sleep(500);
-        return TODOS;
+    http = inject(HttpClient)
+    errorService = inject(ErrorHandlingService)
+
+
+    getTodos() {
+        return this.http.get<Todo[]>(`/api/todos`).pipe(
+            catchError(this.errorService.handleError))
     }
-    async addTodo(todo: Partial<Todo>) {
-        await sleep(500)
-        return {
-            id: Math.random().toString().substring(2, 5),
-            ... todo
-        } as Todo
+
+    addTodo(todo: Partial<Todo>) {
+        return this.http.post<Todo>('/api/todos', todo).pipe(
+            catchError(this.errorService.handleError))
     }
-    async delTodo(id:string) {
-        await sleep(500)
+
+    delTodo(id: string) {
+        return this.http.delete<Todo>(`/api/todos/${id}`).pipe(
+            catchError(this.errorService.handleError))
     }
-    async updateTodo(id: string, completed: boolean) {
-        await sleep(500)
+
+    updateTodo(id: string, completed: boolean) {
+        return this.http.patch<Todo>(`/api/todos/${id}`, { "completed": completed }).pipe(
+            catchError(this.errorService.handleError))
     }
 }
 
-async function  sleep (ms:number) {
+async function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 };

@@ -2,6 +2,7 @@ import { patchState, signalStore, withComputed, withMethods, withState } from "@
 import { Todo } from "../model/todo.model";
 import { TodoService } from "../services/todo.service";
 import { computed, inject } from "@angular/core";
+import { firstValueFrom } from "rxjs";
 
 export type TodosFilter = "all" | "completed" | "pending"
 
@@ -25,34 +26,39 @@ export const TodosStore = signalStore(
         (store, todosService = inject(TodoService)) => ({
             async loadAll() {
                 patchState(store, { loading: true });
-                const todos = await todosService.getTodos();
-                patchState(store, { todos, loading: false });
+                const todos = await firstValueFrom(todosService.getTodos())
+                patchState(store, { todos, loading: false })
             },
             async addTodo(title: string) {
-                const todo = await todosService.addTodo({
+                const todo = await firstValueFrom(todosService.addTodo({
                     title,
                     completed: false
-                })
+                }));
                 patchState(store, (state) => ({
                     todos: [...state.todos, todo]
                 }))
             },
             async delTodo(id: string) {
-                await todosService.delTodo(id);
-                patchState(store, (state) => ({
-                    todos: state.todos.filter((todo) => todo.id !== id)
-                }))
+                const delTodo = await firstValueFrom(todosService.delTodo(id));
+                if (delTodo) {
+                    patchState(store, (state) => ({
+                        todos: state.todos.filter((todo) => todo.id !== id)
+                    }))
+                }
             },
             async updateTodo(id: string, completed: boolean) {
-                await todosService.updateTodo(id, completed);
-                patchState(store, (state) => ({
-                    todos: state.todos.map((todo) => 
-                        todo.id == id ? { ...todo, completed } : todo)
+                const updTodo = await firstValueFrom( todosService.updateTodo(id, completed));
+                if (updTodo) {
+                    patchState(store, (state) => ({
+                        todos: state.todos.map((todo) =>
+                            todo.id == id ? { ...todo, completed } : todo)
                     })
-                )
+                    )
+                }
             },
-            updateFilter (filter: TodosFilter) { 
-                patchState(store, {todosFilter: filter})
+
+            updateFilter(filter: TodosFilter) {
+                patchState(store, { todosFilter: filter })
             },
 
         })
@@ -65,9 +71,9 @@ export const TodosStore = signalStore(
                 case 'all':
                     return todos;
                 case 'completed':
-                    return todos.filter((todo) => todo.completed )
+                    return todos.filter((todo) => todo.completed)
                 case 'pending':
-                    return todos.filter((todo) => !todo.completed)    
+                    return todos.filter((todo) => !todo.completed)
             }
         }),
 
