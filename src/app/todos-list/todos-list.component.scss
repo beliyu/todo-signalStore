@@ -6,12 +6,16 @@
 
 .todo-input {
    width: 200px;
+   mat-icon {
+      color: indigo;
+   }
 }
 
 .delete-btm {
    margin-right: 10px;
    margin-bottom: -5px;
    cursor: pointer;
+   color: indigo;
 }
 
 .todo-item {

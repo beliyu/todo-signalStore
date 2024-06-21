@@ -1,0 +1,29 @@
+
+.w100 {
+width: 100%;
+}
+.w30 {
+  width: 30%;
+}
+.w60 {
+  width: 60%;
+}
+.disfc {
+display: flex;
+flex-direction: column;
+overflow: hidden;
+}
+.mt-0 {
+    margin-top: 0;
+}
+.m-10 {
+  margin: 10px;
+}
+h2 {
+  margin: 10px;
+}
+.form-holder2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}

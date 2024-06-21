@@ -11,16 +11,102 @@
       "views": 200
     }
   ],
-  "comments": [
+  "clients": [
     {
       "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
+      "name": "Petar",
+      "surname": "Petrovic",
+      "email": "petar@gmail.com",
+      "role": "Admin",
+      "lastSeen": "2024-06-20T14:26:31.351Z"
     },
     {
       "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "name": "Kristina",
+      "surname": "Markovic",
+      "email": "kristina@gmail.com",
+      "role": "Commercialist",
+      "lastSeen": "2024-06-11T18:23:31.351Z"
+    },
+    {
+      "id": "3",
+      "name": "Aleksandar",
+      "surname": "Jovanovic",
+      "email": "aleks@gmail.com",
+      "role": "Support",
+      "lastSeen": "2024-06-14T04:22:37.351Z"
+    },
+    {
+      "id": "4",
+      "name": "Aleksa 2",
+      "surname": "Jovanovic",
+      "email": "aleks2@gmail.com",
+      "role": "Commercialist",
+      "password": "125po",
+      "lastSeen": ""
+    },
+    {
+      "id": "5",
+      "name": "Ivana",
+      "surname": "Ivic",
+      "email": "45@klo.lol",
+      "password": "125po",
+      "role": "Commercialist",
+      "lastSeen": "2024-06-20T10:12:11.351Z"
+    },
+    {
+      "id": "6",
+      "name": "Aleksandar 5",
+      "surname": "Jovanovic",
+      "email": "aleks5@gmail.com",
+      "role": "Commercialist",
+      "password": "125po",
+      "lastSeen": ""
+    },
+    {
+      "id": "7",
+      "name": "Snezana",
+      "surname": "Zupa",
+      "email": "35@klo.lol",
+      "password": "125po",
+      "role": "Commercialist",
+      "lastSeen": "2023-12-01T10:12:11.351Z"
+    },
+    {
+      "id": "8",
+      "name": "Aleksandar 4",
+      "surname": "Jovanovic",
+      "email": "aleks4@gmail.com",
+      "role": "Commercialist",
+      "password": "125po",
+      "lastSeen": ""
+    },
+    {
+      "id": "9",
+      "name": "Ivana",
+      "surname": "Izi",
+      "email": "izi@klo.lol",
+      "password": "125po",
+      "role": "Support",
+      "lastSeen": "2023-22-20T10:12:11.351Z"
+    },
+    {
+      "id": "10",
+      "name": "Aleksandar 0",
+      "surname": "Jovanovic",
+      "email": "aleks0@gmail.com",
+      "role": "Commercialist",
+      "password": "125po",
+      "lastSeen": ""
+    },
+    {
+      "id": "11",
+      "name": "Ivanada",
+      "surname": "Tomic",
+      "email": "tomic@klo.lol",
+      "password": "125po",
+      "role": "Commercialist",
+      "lastSeen": "2023-12-20T10:12:11.351Z"
     }
   ],
   "todos": [
@@ -53,11 +139,6 @@
       "id": "6",
       "title": "Popravi bravu",
       "completed": false
-    },
-    {
-      "id": "8c8b",
-      "title": "258",
-      "completed": true
     }
   ]
 }

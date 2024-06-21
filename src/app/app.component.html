@@ -1,9 +1,12 @@
 <div class="app">
   <mat-toolbar  color="primary">
     <mat-toolbar-row>
-      <mat-nav-list>
+      <mat-nav-list class="list-horizontal">
         <mat-list-item >
           <a [routerLink]="['/todos']">Todos</a>
+        </mat-list-item>
+        <mat-list-item >
+          <a [routerLink]="['/clients']">Clients</a>
         </mat-list-item>
       </mat-nav-list>
 

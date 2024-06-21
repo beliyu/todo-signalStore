@@ -1,37 +1,34 @@
 import { Injectable, inject } from "@angular/core";
-import { Todo } from "../model/todo.model";
 import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs";
 import { ErrorHandlingService } from "./error-handling.service";
+import { Client, ClientOmitId } from "../clients/client.model";
 
 @Injectable({ providedIn: 'root' })
 
-export class TodoService {
+export class ClientService {
     http = inject(HttpClient)
     errorService = inject(ErrorHandlingService)
 
 
-    getTodos() {
-        return this.http.get<Todo[]>(`/api/todos`).pipe(
+    getClients() {
+        return this.http.get<Client[]>(`/api/clients`).pipe(
             catchError(this.errorService.handleError))
     }
 
-    addTodo(todo: Partial<Todo>) {
-        return this.http.post<Todo>('/api/todos', todo).pipe(
+    addClient(client: ClientOmitId) {
+        return this.http.post<Client>('/api/clients', client).pipe(
             catchError(this.errorService.handleError))
     }
 
-    delTodo(id: string) {
-        return this.http.delete<Todo>(`/api/todos/${id}`).pipe(
+    delClient(id: string) {
+        return this.http.delete<Client>(`/api/clients/${id}`).pipe(
             catchError(this.errorService.handleError))
     }
 
-    updateTodo(id: string, completed: boolean) {
-        return this.http.patch<Todo>(`/api/todos/${id}`, { "completed": completed }).pipe(
+    updateClient(id: string, cli: Client) {
+        return this.http.patch<Client>(`/api/clients/${id}`, cli).pipe(
             catchError(this.errorService.handleError))
     }
 }
 
-async function sleep(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-};

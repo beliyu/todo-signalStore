@@ -10,8 +10,18 @@
    .spacer {
       flex: 1 1 auto;
    }
+   mat-nav-list.list-horizontal {
+      display: flex;
+      flex-direction: row;
+      mat-list-item {
+           width: min-content;
+      }
+   }
    mat-nav-list a {
       color: white;
       text-decoration: none;
+   }
+   .active {
+      font-weight: 600;
    }
 }
