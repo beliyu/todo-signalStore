@@ -9,31 +9,25 @@ export class ErrorHandlingService {
 
   constructor() { }
 
-  handleError(error: HttpErrorResponse) { console.log('------ ', error)
-    if (error.error && error.error.errors) {
-      const errors = error.error.errors;
-      let errorValue: string;
-      Object.values(errors).forEach(entry => {
-        errorValue = errors[0];
-      });
-      return throwError(() => errorValue);
-    } else if (error.error) {
-      return throwError(() => error.error);
+  handleError(error: HttpErrorResponse) { 
+    if (error.error) {
+      return throwError(() => new Error(error.error));
     } else {
-      return throwError(() => 'Unknown error');
+      return throwError(() => new Error('Unknown error'));
+      
     }
   }
 
-  handleMe(error: HttpErrorResponse){
-    return throwError(() => error.error)
-  }
+  // handleMe(error: HttpErrorResponse){
+  //   return throwError(() => error.error)
+  // }
   
-  handleCreateUserError(error: HttpErrorResponse) {
-    if (error.error) {
-      const errors = error.error.errors;
-      return throwError(() => errors);
-    } else {
-      return throwError(() => 'Unknown error');
-    }
-  }
+  // handleCreateUserError(error: HttpErrorResponse) {
+  //   if (error.error) {
+  //     const errors = error.error.errors;
+  //     return throwError(() => errors);
+  //   } else {
+  //     return throwError(() => 'Unknown error');
+  //   }
+  // }
 }
