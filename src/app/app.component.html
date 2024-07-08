@@ -1,18 +1,17 @@
 <div class="app">
-  <mat-toolbar  color="primary">
+  <mat-toolbar color="primary">
     <mat-toolbar-row>
       <mat-nav-list class="list-horizontal">
-        <mat-list-item >
-          <a [routerLink]="['/todos']">Todos</a>
+        <mat-list-item>
+          <a [routerLink]="['/todos']" class="link">Todos</a>
         </mat-list-item>
-        <mat-list-item >
-          <a [routerLink]="['/clients']">Clients</a>
+        <mat-list-item>
+          <a [routerLink]="['/clients']" class="link">Clients</a>
         </mat-list-item>
       </mat-nav-list>
 
       <span class="spacer"></span>
-      <mat-icon class="example-icon" aria-hidden="false"
-        aria-label="User verified icon">verified_user</mat-icon>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="User verified icon">verified_user</mat-icon>
     </mat-toolbar-row>
   </mat-toolbar>
 

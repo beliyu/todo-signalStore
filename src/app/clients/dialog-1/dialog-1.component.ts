@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +23,7 @@ export class Dialog1 {
   readonly store = inject(ClientsStore);
 
   createPar = this.createForm();
+  hide = signal(true);
 
   constructor() { }
 
@@ -66,6 +67,11 @@ export class Dialog1 {
     } else {
       return 'Izmeni'
     }
+  }
+  
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide);
+    event.stopPropagation();
   }
 
 }

@@ -15,11 +15,12 @@
 
     <mat-list #cTodos>
         @for (todo of store.filteredTodos(); track todo.id; ) {
-        <mat-list-item (click)="onTodoToggle(todo.id, todo.completed)">
+        <mat-list-item (click)="onTodoToggle(todo.id, todo.completed)" data-testid="toggle">
             <div class="todo-item">
-                <mat-icon class="delete-btm" (click)="onDelete(todo.id, $event)"> delete </mat-icon>
+                <mat-icon class="delete-btm" data-testid="delete" (click)="onDelete(todo.id, $event)"> delete
+                </mat-icon>
                 <span [ngStyle]="{'text-decoration': todo.completed ? 'line-through' : 'none'}"> {{todo.title}} </span>
-                <mat-checkbox [checked]="todo.completed"></mat-checkbox> 
+                <mat-checkbox [checked]="todo.completed"></mat-checkbox>
             </div>
         </mat-list-item>
         }

@@ -10,18 +10,18 @@
           <mat-form-field style="min-width: 270px;">
             <mat-label for="name">Ime</mat-label>
             <input matInput type="text" id="name" class="form-control" formControlName="name" />
+            @if (!createPar.controls['name'].valid && createPar.controls['name'].touched) {
+            <mat-error class="error">Molimo unesite ime!</mat-error>}
           </mat-form-field>
-          @if (!createPar.controls['name'].valid && createPar.controls['name'].touched) {
-          <span class="error">Molimo unesite ime!</span>}
         </div>
 
         <div class="form-group">
           <mat-form-field style="min-width: 270px;">
             <mat-label for="country">Prezime</mat-label>
             <input matInput type="text" id="surname" class="form-control" formControlName="surname" />
+            @if ( !createPar.controls['surname'].valid && createPar.controls['surname'].touched ) {
+            <mat-error class="error">Molimo unesite prezime!</mat-error>}
           </mat-form-field>
-          @if ( !createPar.controls['surname'].valid && createPar.controls['surname'].touched ) {
-          <span class="error">Molimo unesite prezime!</span>}
         </div>
 
         <div class="form-group">
@@ -34,30 +34,37 @@
         <div class="form-group">
           <mat-form-field style="min-width: 270px;">
             <mat-label for="email">Lozinka</mat-label>
-            <input matInput type="text" id="password" class="form-control" formControlName="password" />
+            <input matInput type="text" id="password" class="form-control" formControlName="password"
+              [type]="hide() ? 'password' : 'text'" />
+            <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()">
+              <mat-icon data-testid="visi">{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint align="end"> Min 5 characters </mat-hint>
           </mat-form-field>
         </div>
 
         <div class="form-group">
-        <mat-form-field style="min-width: 270px;">
-          <mat-label>Izaberi ulogu</mat-label>
-          <mat-select formControlName="role">
-            <mat-option value='Admin'>
-              Admin
-            </mat-option>
-            <mat-option value='Commercialist'>
-              Komercijalista
-            </mat-option>
-            <mat-option value='Support'>
-              Podrška
-            </mat-option>
-          </mat-select>
-        </mat-form-field></div>
+          <mat-form-field style="min-width: 270px;">
+            <mat-label>Izaberi ulogu</mat-label>
+            <mat-select formControlName="role">
+              <mat-option value='Admin'>
+                Admin
+              </mat-option>
+              <mat-option value='Commercialist'>
+                Komercijalista
+              </mat-option>
+              <mat-option value='Support'>
+                Podrška
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
     </div>
   </form>
 </div>
 <div mat-dialog-actions class="m-10">
   <button mat-button (click)="onNoClick()">Prekini</button>
-  <button mat-button (click)="save()" [disabled]="!createPar.valid">Snimi</button>
+  <button mat-button (click)="save()" [disabled]="!createPar.valid" data-testid="save">Snimi</button>
 </div>
