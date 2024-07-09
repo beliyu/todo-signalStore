@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { TodoService } from './todo.service';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { TODOS } from '../model/todo.model';
+import { TODOS } from '../todos-list/todo.model';
 import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
 import { ErrorHandlingService } from './error-handling.service';
 

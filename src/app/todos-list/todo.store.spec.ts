@@ -1,6 +1,6 @@
 import { TestBed } from "@angular/core/testing";
 import { TodosStore } from "./todo.store";
-import { TODOS } from "../model/todo.model";
+import { TODOS } from "../todos-list/todo.model";
 import { of } from "rxjs";
 import { TodoService } from "../services/todo.service";
 

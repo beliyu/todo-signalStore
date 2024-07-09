@@ -1,5 +1,5 @@
 import { Injectable, inject } from "@angular/core";
-import { Todo } from "../model/todo.model";
+import { Todo } from "../todos-list/todo.model";
 import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs";
 import { ErrorHandlingService } from "./error-handling.service";

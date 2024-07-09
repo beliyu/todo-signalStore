@@ -3,7 +3,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleChange, MatButtonToggleGroup, MatButtonToggleModule } from '@angular/material/button-toggle';
-import { TodosStore } from '../store/todo.store';
+import { TodosStore } from './todo.store';
 import { MatListModule } from '@angular/material/list'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgStyle } from '@angular/common';

@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
-import { TodosStore } from './store/todo.store';
+import { TodosStore } from './todos-list/todo.store';
 import { TodosListComponent } from './todos-list/todos-list.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';

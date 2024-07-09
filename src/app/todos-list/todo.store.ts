@@ -1,5 +1,5 @@
 import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
-import { Todo } from "../model/todo.model";
+import { Todo } from "../todos-list/todo.model";
 import { TodoService } from "../services/todo.service";
 import { computed, inject } from "@angular/core";
 import { firstValueFrom } from "rxjs";

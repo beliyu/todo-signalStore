@@ -4,8 +4,8 @@ import { By } from '@angular/platform-browser';
 import { TodosListComponent } from './todos-list.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { fake, SinonSpy } from 'sinon';
-import { TodosStore } from '../store/todo.store';
-import { TODOS } from '../model/todo.model';
+import { TodosStore } from './todo.store';
+import { TODOS } from './todo.model';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 
