@@ -34,7 +34,7 @@ const inicialState: ClientsState = {
 }
 
 export const ClientsStore = signalStore(
-    { providedIn: 'root' },
+    { providedIn: 'root', protectedState: false },
     withState(inicialState),
 
     withMethods(
