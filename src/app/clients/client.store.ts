@@ -7,7 +7,7 @@ import { SnackbarService } from "../services/snackbar.service";
 
 export type ServerFilter = "all" | "Admin" | "Commercialist"
 
-type ClientsState = {
+interface ClientsState {
     clients: Client[];
     loading: boolean;
     filter: {
@@ -74,10 +74,10 @@ export const ClientsStore = signalStore(
             },
 
             setFilter(filt: { name: string; email: string; role: string; }) {
-                patchState(store, (state) => ({ filter: filt }))
+                patchState(store, () => ({ filter: filt }))
             },
             setPage(page: { pageIndex: number; pageSize: number; }) {
-                patchState(store, (state) => ({ page: page }))
+                patchState(store, () => ({ page: page }))
             },
 
         })

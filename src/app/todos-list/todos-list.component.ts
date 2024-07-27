@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject, viewChild } from '@angular/core';
+import { Component, effect, inject, viewChild } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -36,7 +36,7 @@ export class TodosListComponent {
     await this.store.delTodo(id);
   }
 
-  async onTodoToggle(id: string, completed: any) { console.log(completed)
+  async onTodoToggle(id: string, completed: any) { 
     this.store.updateTodo(id, !completed);
   }
 

@@ -13,8 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 export class AreYouSureComponent {
   readonly dialogRef = inject(MatDialogRef<AreYouSureComponent>);
 
-  constructor() { }
-
   confirm() {
     this.dialogRef.close(true);
   }

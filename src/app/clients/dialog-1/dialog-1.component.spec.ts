@@ -73,7 +73,7 @@ describe('Dialog1 Component', () => {
     });
 
     it('should change visibility on click', (() => {
-        let icon = fixture.debugElement.query(By.css('[data-testid="visi"]')).nativeElement;
+        const icon = fixture.debugElement.query(By.css('[data-testid="visi"]')).nativeElement;
         expect(icon.innerText).toEqual('visibility_off');
 
         icon.click();
@@ -96,7 +96,7 @@ describe('Dialog1 Component', () => {
     });
 
     it('should be able to save()', async () => {
-        let btn = fixture.debugElement.query(By.css('[data-testid="save"]')).nativeElement;
+        const btn = fixture.debugElement.query(By.css('[data-testid="save"]')).nativeElement;
         const formFields = await loader.getAllHarnesses(MatFormFieldHarness);
 
         fixture.componentInstance.createPar.get('name')?.setValue('Alex');
@@ -173,7 +173,7 @@ describe('Dialog1 Component data2', () => {
 
 
     it('should be able to edit()', async () => {
-        let btn = fixture.debugElement.query(By.css('[data-testid="save"]')).nativeElement;
+        const btn = fixture.debugElement.query(By.css('[data-testid="save"]')).nativeElement;
         const formFields = await loader.getAllHarnesses(MatFormFieldHarness);
 
         fixture.componentInstance.createPar.get('name')?.setValue('Alex');

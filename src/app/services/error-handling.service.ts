@@ -7,8 +7,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ErrorHandlingService {
 
-  constructor() { }
-
   handleError(error: HttpErrorResponse) { 
     if (error.error) {
       return throwError(() => new Error(error.error));

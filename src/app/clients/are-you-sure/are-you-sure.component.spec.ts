@@ -47,7 +47,7 @@ describe('AreYouSureComponent Component', () => {
     });
 
     it('should be able to confirm', async () => {
-        let btn = fixture.debugElement.query(By.css('[data-testid="da"]')).nativeElement;
+        const btn = fixture.debugElement.query(By.css('[data-testid="da"]')).nativeElement;
         btn.click();
         fixture.detectChanges();
 
@@ -55,7 +55,7 @@ describe('AreYouSureComponent Component', () => {
     });
 
     it('should be able to reject', async () => {
-        let btn = fixture.debugElement.query(By.css('[data-testid="ne"]')).nativeElement;
+        const btn = fixture.debugElement.query(By.css('[data-testid="ne"]')).nativeElement;
         btn.click();
         fixture.detectChanges();
 

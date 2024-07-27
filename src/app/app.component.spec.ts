@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';

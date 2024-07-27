@@ -27,12 +27,12 @@ export class ClientsComponent implements OnInit {
   store = inject(ClientsStore);
 
   filterGroup: FormGroup;
-  docLen: number = 0;
+  docLen = 0;
   pageSize = 5;
   pageIndex = 0;
 
   data = computed(() => {
-    let start = this.store.page.pageSize() * this.store.page.pageIndex()
+    const start = this.store.page.pageSize() * this.store.page.pageIndex()
     return this.store.filteredClients().slice(start, start + this.store.page.pageSize())
   })
   displayedColumns: string[] = [
@@ -86,7 +86,7 @@ export class ClientsComponent implements OnInit {
 
 
   filterDS() {
-    let fil = {
+    const fil = {
       name: this.filterGroup.controls['name'].value.toLowerCase(),
       email: this.filterGroup.controls['email'].value.toLowerCase(),
       role: this.filterGroup.controls['role'].value,

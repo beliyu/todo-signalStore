@@ -8,8 +8,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SnackbarService {
     snackbar = inject(MatSnackBar)
 
-    constructor(    ) { }
-
     showSnackbar(message: string, action: boolean, duration: number) {
         const actionButtonLabel = 'Close';
         action = true;

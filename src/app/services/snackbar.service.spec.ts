@@ -3,14 +3,14 @@ import { SnackbarService } from './snackbar.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('SnackbarService', () => {
-  let snackBar: MatSnackBar;
+  
   beforeEach(() => TestBed.configureTestingModule({
      imports: [MatSnackBarModule],
      providers: [ SnackbarService, ],
   }));
 
   beforeEach(() => {
-    snackBar = TestBed.get(MatSnackBar);
+    TestBed.get(MatSnackBar);
   });
 
   it('should be created', () => {

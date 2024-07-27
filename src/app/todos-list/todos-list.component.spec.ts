@@ -6,8 +6,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { fake, SinonSpy } from 'sinon';
 import { TodosStore } from './todo.store';
 import { TODOS } from './todo.model';
-import { HarnessLoader } from '@angular/cdk/testing';
-import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 
 type UnwrapProvider<T> = T extends ProviderToken<infer U> ? U : never;
 
@@ -25,7 +23,6 @@ function asWritableSignal<T>(s: Signal<T>): WritableSignal<T> {
 describe('TodosListComponent', () => {
   let component: TodosListComponent;
   let fixture: ComponentFixture<TodosListComponent>;
-  let loader: HarnessLoader;
   let store: UnwrapProvider<typeof TodosStore>;
 
   class fakesTodoStore {
@@ -59,7 +56,6 @@ describe('TodosListComponent', () => {
     store = fixture.debugElement.injector.get(TodosStore);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    loader = TestbedHarnessEnvironment.loader(fixture);
   });
 
   it('should create', () => {

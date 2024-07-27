@@ -6,7 +6,7 @@ import { firstValueFrom } from "rxjs";
 
 export type TodosFilter = "all" | "completed" | "pending"
 
-type TodosState = {
+interface TodosState {
     todos: Todo[];
     loading: boolean;
     todosFilter: TodosFilter

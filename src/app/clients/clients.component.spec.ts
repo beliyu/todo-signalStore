@@ -88,7 +88,7 @@ describe('ClientsComponent', () => {
   });
 
   it('should be able to delete', async () => {
-    let btn = fixture.debugElement.query(By.css('[data-testid="delete"]')).nativeElement;
+    const btn = fixture.debugElement.query(By.css('[data-testid="delete"]')).nativeElement;
     btn.click();
     fixture.detectChanges();
 
@@ -96,7 +96,7 @@ describe('ClientsComponent', () => {
   });
 
   it('should be able to edit', async () => {
-    let btn = fixture.debugElement.query(By.css('[data-testid="edit"]')).nativeElement;
+    const btn = fixture.debugElement.query(By.css('[data-testid="edit"]')).nativeElement;
     btn.click();
     fixture.detectChanges();
 
@@ -104,9 +104,9 @@ describe('ClientsComponent', () => {
   });
 
   it('should be able to set filter', async () => {
-    const formFields = await loader.getAllHarnesses(MatFormFieldHarness);
+    // const formFields = await loader.getAllHarnesses(MatFormFieldHarness);
 
-    let btn = fixture.debugElement.query(By.css('.form-control')).nativeElement.dispatchEvent(new Event('keyup'));
+    fixture.debugElement.query(By.css('.form-control')).nativeElement.dispatchEvent(new Event('keyup'));
     fixture.detectChanges();
 
     expect(asSinonSpy(store.setFilter).callCount).toBe(1);

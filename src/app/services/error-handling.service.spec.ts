@@ -9,6 +9,7 @@ describe('Error-handling Service', () => {
     ehService = new ErrorHandlingService();
   });
 
+  /* eslint-disable @typescript-eslint/no-empty-function */
   it('throwError error', () => {
     const errorText = "Not found!"
     const e = new HttpErrorResponse({ error: errorText, status: 404, });
@@ -27,4 +28,5 @@ describe('Error-handling Service', () => {
       error: (error) => { expect(error).toMatch(errorText); }
     });
    });
+  /* eslint-enable @typescript-eslint/no-empty-function */
 });
